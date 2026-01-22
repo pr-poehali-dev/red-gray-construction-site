@@ -26,11 +26,20 @@ const CalculatorSection = () => {
       industrial: 38000,
     };
 
+    const floorCoefficients: Record<string, number> = {
+      apartment: 0.08,
+      cottage: 0.12,
+      office: 0.10,
+      shop: 0.09,
+      industrial: 0.07,
+    };
+
     const basePrice = baseRates[calcData.objectType] || 40000;
     const area = parseFloat(calcData.area);
     const floors = parseInt(calcData.floors);
+    const coefficient = floorCoefficients[calcData.objectType] || 0.1;
     
-    const floorMultiplier = floors > 1 ? 1 + (floors - 1) * 0.1 : 1;
+    const floorMultiplier = floors > 1 ? 1 + (floors - 1) * coefficient : 1;
     const totalPrice = basePrice * area * floorMultiplier;
 
     setCalculatedPrice(totalPrice);
