@@ -8,7 +8,7 @@ import Icon from '@/components/ui/icon';
 
 const CalculatorSection = () => {
   const [calcData, setCalcData] = useState({
-    serviceType: '',
+    objectType: '',
     area: '',
     floors: '1',
   });
@@ -16,16 +16,17 @@ const CalculatorSection = () => {
   const [calculatedPrice, setCalculatedPrice] = useState<number | null>(null);
 
   const calculatePrice = () => {
-    if (!calcData.serviceType || !calcData.area) return;
+    if (!calcData.objectType || !calcData.area) return;
 
     const baseRates: Record<string, number> = {
-      residential: 45000,
-      commercial: 55000,
-      industrial: 40000,
-      renovation: 25000,
+      apartment: 35000,
+      cottage: 50000,
+      office: 45000,
+      shop: 40000,
+      industrial: 38000,
     };
 
-    const basePrice = baseRates[calcData.serviceType] || 45000;
+    const basePrice = baseRates[calcData.objectType] || 40000;
     const area = parseFloat(calcData.area);
     const floors = parseInt(calcData.floors);
     
@@ -52,16 +53,17 @@ const CalculatorSection = () => {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="service-type">Тип услуги</Label>
-                <Select value={calcData.serviceType} onValueChange={(value) => setCalcData({ ...calcData, serviceType: value })}>
-                  <SelectTrigger id="service-type">
-                    <SelectValue placeholder="Выберите тип услуги" />
+                <Label htmlFor="object-type">Тип объекта</Label>
+                <Select value={calcData.objectType} onValueChange={(value) => setCalcData({ ...calcData, objectType: value })}>
+                  <SelectTrigger id="object-type">
+                    <SelectValue placeholder="Выберите тип объекта" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="residential">Жилищное строительство</SelectItem>
-                    <SelectItem value="commercial">Коммерческая недвижимость</SelectItem>
-                    <SelectItem value="industrial">Промышленные объекты</SelectItem>
-                    <SelectItem value="renovation">Реконструкция и ремонт</SelectItem>
+                    <SelectItem value="apartment">Квартира</SelectItem>
+                    <SelectItem value="cottage">Коттедж</SelectItem>
+                    <SelectItem value="office">Коммерческий офис</SelectItem>
+                    <SelectItem value="shop">Магазин</SelectItem>
+                    <SelectItem value="industrial">Промышленный объект</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
