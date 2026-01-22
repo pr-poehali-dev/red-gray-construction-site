@@ -108,7 +108,7 @@ const CalculatorSection = () => {
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-xl">Эконом</CardTitle>
                         <span className="text-2xl font-bold text-primary">
-                          {(calculatedPrice * 0.7).toLocaleString('ru-RU')} ₽
+                          {(calculatedPrice * 0.7 * 0.925).toLocaleString('ru-RU')} ₽ — {(calculatedPrice * 0.7 * 1.075).toLocaleString('ru-RU')} ₽
                         </span>
                       </div>
                     </CardHeader>
@@ -143,7 +143,7 @@ const CalculatorSection = () => {
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-xl">Комфорт</CardTitle>
                         <span className="text-2xl font-bold text-primary">
-                          {calculatedPrice.toLocaleString('ru-RU')} ₽
+                          {(calculatedPrice * 0.925).toLocaleString('ru-RU')} ₽ — {(calculatedPrice * 1.075).toLocaleString('ru-RU')} ₽
                         </span>
                       </div>
                     </CardHeader>
@@ -182,7 +182,7 @@ const CalculatorSection = () => {
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-xl">Дизайнерский проект</CardTitle>
                         <span className="text-2xl font-bold text-primary">
-                          {(calculatedPrice * 1.5).toLocaleString('ru-RU')} ₽
+                          {(calculatedPrice * 1.5 * 0.925).toLocaleString('ru-RU')} ₽ — {(calculatedPrice * 1.5 * 1.075).toLocaleString('ru-RU')} ₽
                         </span>
                       </div>
                     </CardHeader>
