@@ -104,7 +104,7 @@ const CalculatorSection = () => {
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground mb-2">Примерная стоимость строительства:</p>
                     <p className="text-4xl font-bold text-primary">
-                      {calculatedPrice.toLocaleString('ru-RU')} ₽
+                      {(calculatedPrice * 0.75).toLocaleString('ru-RU')} ₽ — {(calculatedPrice * 1.25).toLocaleString('ru-RU')} ₽
                     </p>
                     <p className="text-sm text-muted-foreground mt-2">
                       * Окончательная стоимость определяется после выезда специалиста на объект
