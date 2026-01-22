@@ -112,7 +112,7 @@ const CalculatorSection = () => {
                         </span>
                       </div>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="space-y-4">
                       <ul className="space-y-2 text-sm text-muted-foreground">
                         <li className="flex items-start gap-2">
                           <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
@@ -131,6 +131,10 @@ const CalculatorSection = () => {
                           <span>Замена напольного покрытия (ламинат)</span>
                         </li>
                       </ul>
+                      <Button className="w-full" variant="outline">
+                        <Icon name="ShoppingCart" size={18} className="mr-2" />
+                        Выбрать Эконом
+                      </Button>
                     </CardContent>
                   </Card>
 
@@ -143,7 +147,7 @@ const CalculatorSection = () => {
                         </span>
                       </div>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="space-y-4">
                       <ul className="space-y-2 text-sm text-muted-foreground">
                         <li className="flex items-start gap-2">
                           <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
@@ -166,6 +170,10 @@ const CalculatorSection = () => {
                           <span>Консультация дизайнера</span>
                         </li>
                       </ul>
+                      <Button className="w-full">
+                        <Icon name="ShoppingCart" size={18} className="mr-2" />
+                        Выбрать Комфорт
+                      </Button>
                     </CardContent>
                   </Card>
 
@@ -178,7 +186,7 @@ const CalculatorSection = () => {
                         </span>
                       </div>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="space-y-4">
                       <ul className="space-y-2 text-sm text-muted-foreground">
                         <li className="flex items-start gap-2">
                           <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
@@ -201,6 +209,10 @@ const CalculatorSection = () => {
                           <span>Полное сопровождение дизайнера и 3D-визуализация</span>
                         </li>
                       </ul>
+                      <Button className="w-full">
+                        <Icon name="ShoppingCart" size={18} className="mr-2" />
+                        Выбрать Дизайнерский
+                      </Button>
                     </CardContent>
                   </Card>
 
