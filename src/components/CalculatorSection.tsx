@@ -100,16 +100,113 @@ const CalculatorSection = () => {
               </Button>
 
               {calculatedPrice !== null && (
-                <div className="mt-6 p-6 bg-primary/5 border-2 border-primary rounded-lg animate-fade-in">
-                  <div className="text-center">
-                    <p className="text-sm text-muted-foreground mb-2">Примерная стоимость строительства:</p>
-                    <p className="text-4xl font-bold text-primary">
-                      {(calculatedPrice * 0.75).toLocaleString('ru-RU')} ₽ — {(calculatedPrice * 1.25).toLocaleString('ru-RU')} ₽
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      * Окончательная стоимость определяется после выезда специалиста на объект
-                    </p>
-                  </div>
+                <div className="mt-6 space-y-4 animate-fade-in">
+                  <p className="text-center text-lg font-semibold mb-4">Выберите подходящий вариант:</p>
+                  
+                  <Card className="border-2 hover:border-primary transition-colors">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-xl">Эконом</CardTitle>
+                        <span className="text-2xl font-bold text-primary">
+                          {(calculatedPrice * 0.7).toLocaleString('ru-RU')} ₽
+                        </span>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Простая отделка помещений</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Покраска стен стандартными материалами</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Монтаж базовых конструкций</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Замена напольного покрытия (ламинат)</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-2 hover:border-primary transition-colors">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-xl">Комфорт</CardTitle>
+                        <span className="text-2xl font-bold text-primary">
+                          {calculatedPrice.toLocaleString('ru-RU')} ₽
+                        </span>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Качественная отделка с улучшенными материалами</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Декоративная покраска стен, обои премиум-класса</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Монтаж усиленных конструкций</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Паркетная доска или качественный ламинат</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Консультация дизайнера</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-2 hover:border-primary transition-colors">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-xl">Дизайнерский проект</CardTitle>
+                        <span className="text-2xl font-bold text-primary">
+                          {(calculatedPrice * 1.5).toLocaleString('ru-RU')} ₽
+                        </span>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Эксклюзивная отделка премиум-материалами</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Авторские решения по покраске и декору</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Индивидуальное проектирование конструкций</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Натуральный паркет или эксклюзивное покрытие</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Полное сопровождение дизайнера и 3D-визуализация</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <p className="text-sm text-muted-foreground text-center mt-4">
+                    * Окончательная стоимость определяется после выезда специалиста на объект
+                  </p>
                 </div>
               )}
             </CardContent>
