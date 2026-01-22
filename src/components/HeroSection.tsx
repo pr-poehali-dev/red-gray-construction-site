@@ -10,7 +10,7 @@ const HeroSection = () => {
           Строим будущее<br />с надёжностью
         </h1>
         <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-95">
-          Полный цикл строительства от проектирования до сдачи объекта
+          Полный цикл строительства от проектирования до сдачи объекта в эксплуатацию
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6">
