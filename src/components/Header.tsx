@@ -24,6 +24,9 @@ const Header = ({ scrollToSection }: HeaderProps) => {
             <button onClick={() => scrollToSection('calculator')} className="text-foreground hover:text-primary transition-colors font-semibold">
               Калькулятор
             </button>
+            <button onClick={() => scrollToSection('portfolio')} className="text-foreground hover:text-primary transition-colors font-semibold">
+              Портфолио
+            </button>
             <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-colors font-semibold">
               О компании
             </button>

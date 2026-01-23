@@ -30,18 +30,21 @@ const projects = [
     title: 'ЖК "Современный"',
     type: 'Жилой комплекс',
     area: '12,000 м²',
+    description: 'Современный жилой комплекс с развитой инфраструктурой, подземным паркингом и благоустроенной территорией. Энергоэффективные технологии и качественные материалы.',
     image: 'https://cdn.poehali.dev/projects/13623b61-40b2-4912-ab6c-b1a942c86c50/files/72482b69-ffd7-404a-a452-299fb88ac5e3.jpg',
   },
   {
     title: 'Бизнес-центр "Сити"',
     type: 'Офисное здание',
     area: '8,500 м²',
+    description: 'Премиальный бизнес-центр класса А в центре города. Современные инженерные системы, высокоскоростные лифты, панорамное остекление и собственная парковка.',
     image: 'https://cdn.poehali.dev/projects/13623b61-40b2-4912-ab6c-b1a942c86c50/files/8450348d-4c56-4e05-a4ec-72ab4bfecbbe.jpg',
   },
   {
     title: 'Элитный коттедж',
     type: 'Загородная недвижимость',
     area: '450 м²',
+    description: 'Роскошный загородный дом с панорамными окнами, террасой и ландшафтным дизайном. Индивидуальный проект с использованием натуральных материалов премиум-класса.',
     image: 'https://cdn.poehali.dev/projects/13623b61-40b2-4912-ab6c-b1a942c86c50/files/f2b4591f-1ba6-4d75-b6ad-26c0d8429c4d.jpg',
   },
 ];
@@ -68,6 +71,46 @@ const MainSections = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{service.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши проекты</h2>
+            <p className="text-xl text-muted-foreground">
+              Реализованные объекты различной сложности
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <CardDescription className="space-y-2">
+                    <p className="flex items-center gap-2">
+                      <Icon name="Building" size={16} />
+                      {project.type}
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Icon name="Maximize" size={16} />
+                      {project.area}
+                    </p>
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">{project.description}</p>
                 </CardContent>
               </Card>
             ))}
